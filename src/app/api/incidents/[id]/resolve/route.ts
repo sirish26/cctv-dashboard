@@ -3,9 +3,10 @@ import { NextResponse } from 'next/server';
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const incidentId = Number(params.id);
+  const { id } = await params;
+  const incidentId = Number(id);
   if (isNaN(incidentId)) {
     return NextResponse.json({ error: 'Invalid incident ID' }, { status: 400 });
   }
