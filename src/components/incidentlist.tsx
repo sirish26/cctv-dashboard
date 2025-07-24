@@ -47,7 +47,7 @@ export default function IncidentList({
   }, [incidents]);
 
   const resolveIncident = async (id: number) => {
-    await fetch(`/api/incidents/${id}/reslove`, { method: 'PATCH' });
+    await fetch(`/api/incidents/${id}/resolve`, { method: 'PATCH' });
     fetch('/api/incidents?resolved=false')
       .then((res) => res.json())
       .then((data) => setIncidents(data));
