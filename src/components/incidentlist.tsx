@@ -62,7 +62,7 @@ export default function IncidentList({
         <div className="flex items-center gap-2 text-lg font-semibold">
           <AlertTriangle className="text-red-500" size={20} />
           {showResolved
-            ? `${incidents.length} Resolved Incidents`
+            ? `${resolvedCount} Resolved Incidents`
             : `${incidents.length} Unresolved Incidents`}
         </div>
         <div
